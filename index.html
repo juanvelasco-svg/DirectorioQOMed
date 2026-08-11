@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0e2f56">
+<meta name="description" content="Directorio del curso de Química Orgánica para estudiantes de Medicina — Unidad de Formación Básica Integral, Universidad Peruana Cayetano Heredia.">
+<title>Química Orgánica · Medicina | Universidad Peruana Cayetano Heredia</title>
+<link rel="icon" type="image/png" href="logo-upch.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --upch-gold:#d9a520;
+    --upch-gold-dark:#a97a10;
+    --upch-gold-soft:#f3d27a;
+    --upch-blue:#0e2f56;
+    --ink:#12263f;
+    --paper:#fffcf4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Source Sans 3',system-ui,sans-serif;
+    color:var(--ink);
+    min-height:100vh;
+    background:
+      linear-gradient(115deg, rgba(9,30,66,.88) 0%, rgba(9,30,66,.55) 45%, rgba(120,90,20,.30) 100%),
+      url('fondo-qomed.jpg') center/cover no-repeat fixed;
+  }
+  @media (max-width:760px){ body{background-attachment:scroll} }
+
+  /* ============ ENCABEZADO ============ */
+  .hero{
+    max-width:880px;
+    margin:52px auto 10px;
+    padding:36px 28px 30px;
+    text-align:center;
+    background:rgba(255,252,244,.95);
+    border-radius:18px;
+    border-top:6px solid var(--upch-gold);
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+    backdrop-filter:blur(6px);
+    animation:fadeUp .7s ease both;
+  }
+  .hero .logo{
+    width:108px;
+    margin-bottom:14px;
+    filter:drop-shadow(0 6px 12px rgba(0,0,0,.25));
+  }
+  .hero .uni{
+    font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--upch-blue); font-size:.95rem;
+  }
+  .hero .unidad{
+    color:#5a6b85; font-size:.8rem; letter-spacing:.1em;
+    text-transform:uppercase; margin-top:4px;
+  }
+  .hero h1{
+    font-family:'Lora',serif; font-weight:700;
+    font-size:clamp(2.1rem, 5vw, 3.1rem);
+    color:var(--upch-blue); margin:14px 0 6px;
+  }
+  .hero .dir{
+    color:var(--upch-gold-dark); font-weight:700; font-size:1rem; letter-spacing:.04em;
+  }
+  .hero .line{
+    width:120px; height:3px; margin:18px auto 0;
+    background:linear-gradient(90deg, transparent, var(--upch-gold), transparent);
+  }
+  .hero .caduceo{ color:var(--upch-gold-dark); font-size:1.2rem; margin-top:10px; }
+
+  /* ============ DIRECTORIO DE CLASES ============ */
+  .grid{
+    max-width:1240px;
+    margin:36px auto 20px;
+    padding:0 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+    gap:20px;
+    list-style:none;
+  }
+  .grid a{
+    display:flex; flex-direction:column; gap:10px;
+    background:rgba(255,252,244,.96);
+    border-radius:16px;
+    padding:24px 22px 20px;
+    text-decoration:none; color:inherit;
+    border:1px solid rgba(169,122,16,.28);
+    box-shadow:0 10px 26px rgba(5,20,45,.28);
+    position:relative; overflow:hidden;
+    transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+    animation:fadeUp .6s ease both;
+  }
+  .grid a::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:5px;
+    background:linear-gradient(90deg, var(--upch-gold), var(--upch-gold-soft), var(--upch-gold-dark));
+  }
+  .grid a:hover{
+    transform:translateY(-6px);
+    box-shadow:0 22px 44px rgba(5,20,45,.42);
+    border-color:var(--upch-gold);
+  }
+  .top{display:flex; align-items:center; gap:12px}
+  .num{
+    font-family:'Lora',serif; font-weight:700; font-size:1.25rem; color:#fff;
+    width:52px; height:52px; border-radius:50%;
+    display:grid; place-items:center; flex-shrink:0;
+    background:linear-gradient(135deg, var(--upch-gold), var(--upch-gold-dark));
+    box-shadow:inset 0 -3px 6px rgba(0,0,0,.18);
+  }
+  .label{
+    font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+    color:#8a6a14; font-weight:700;
+  }
+  .grid h3{
+    font-family:'Lora',serif; font-size:1.13rem; line-height:1.3;
+    color:var(--upch-blue);
+  }
+  .desc{font-size:.92rem; color:#44566f; line-height:1.5; flex:1}
+  .btn{
+    align-self:flex-start; margin-top:6px;
+    background:var(--upch-blue); color:#ffe9ad;
+    padding:9px 18px; border-radius:999px;
+    font-weight:700; font-size:.84rem; letter-spacing:.03em;
+    transition:background .25s ease, color .25s ease;
+  }
+  .grid a:hover .btn{background:var(--upch-gold-dark); color:#fff}
+
+  /* ============ PIE ============ */
+  footer{
+    max-width:880px; margin:10px auto 46px; padding:22px 24px;
+    text-align:center; border-radius:14px;
+    background:rgba(9,30,66,.88); backdrop-filter:blur(4px);
+  }
+  footer .motto{
+    font-family:'Lora',serif; font-style:italic;
+    color:#ffe9ad; font-size:1.08rem;
+  }
+  footer p{color:#cfd9ea; font-size:.82rem; margin-top:8px; letter-spacing:.04em}
+
+  @keyframes fadeUp{
+    from{opacity:0; transform:translateY(18px)}
+    to{opacity:1; transform:translateY(0)}
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <img class="logo" src="logo-upch.png" alt="Escudo de la Universidad Peruana Cayetano Heredia">
+    <p class="uni">Universidad Peruana Cayetano Heredia</p>
+    <p class="unidad">Unidad de Formación Básica Integral</p>
+    <h1>Química Orgánica</h1>
+    <p class="dir">Directorio de clases · Estudiantes de Medicina</p>
+    <div class="line"></div>
+    <div class="caduceo">⚕</div>
+  </header>
+
+  <main>
+    <ol class="grid">
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase1/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">01</span><span class="label">Clase 01</span></span>
+        <h3>El átomo de carbono: hibridación y enlace</h3>
+        <p class="desc">Estructura atómica, hibridación sp³/sp²/sp, enlaces σ y π, fortaleza de enlaces y rupturas homolítica y heterolítica.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase2/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">02</span><span class="label">Clase 02</span></span>
+        <h3>Efectos electrónicos, resonancia e isomería</h3>
+        <p class="desc">Sistemas π deslocalizados, efectos inductivo y mesomérico, resonancia, isomería estructural y quiralidad.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase3/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">03</span><span class="label">Clase 03</span></span>
+        <h3>Estereoquímica</h3>
+        <p class="desc">Proyecciones de Fischer, enantiómeros, configuración R/S, formas meso e isomería geométrica cis–trans.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase4/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">04</span><span class="label">Clase 04</span></span>
+        <h3>Alcanos y cicloalcanos</h3>
+        <p class="desc">Nomenclatura IUPAC, análisis conformacional, propiedades físicas y su relevancia biológica.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase5/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">05</span><span class="label">Clase 05</span></span>
+        <h3>Alquenos y alquinos</h3>
+        <p class="desc">Insaturaciones, reacciones de adición, regla de Markovnikov e importancia de los enlaces π en biomoléculas.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase6/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">06</span><span class="label">Clase 06</span></span>
+        <h3>Compuestos aromáticos</h3>
+        <p class="desc">Benceno y aromaticidad, sustitución electrofílica aromática y anillos aromáticos en fármacos.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase7/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">07</span><span class="label">Clase 07</span></span>
+        <h3>Haluros de alquilo</h3>
+        <p class="desc">Sustitución nucleofílica SN1/SN2 y eliminación E1/E2; mecanismos y aplicaciones en síntesis de fármacos.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase8/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">08</span><span class="label">Clase 08</span></span>
+        <h3>Alcoholes, fenoles y éteres</h3>
+        <p class="desc">Grupo hidroxilo, acidez, oxidación y su presencia en antisépticos y fármacos de uso clínico.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase9/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">09</span><span class="label">Clase 09</span></span>
+        <h3>Aldehídos y cetonas</h3>
+        <p class="desc">El grupo carbonilo, adición nucleofílica y su papel en el metabolismo y la química biológica.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase10/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">10</span><span class="label">Clase 10</span></span>
+        <h3>Ácidos carboxílicos y derivados</h3>
+        <p class="desc">Acidez, esterificación, amidas y derivados acílicos: aspirina, penicilinas y química farmacéutica.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase11/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">11</span><span class="label">Clase 11</span></span>
+        <h3>Aminas y compuestos nitrogenados</h3>
+        <p class="desc">Basicidad de aminas, alcaloides, neurotransmisores y fármacos con nitrógeno.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase12/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">12</span><span class="label">Clase 12</span></span>
+        <h3>Carbohidratos</h3>
+        <p class="desc">Monosacáridos, disacáridos y polisacáridos; ciclización, poder reductor e importancia clínica.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase13/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">13</span><span class="label">Clase 13</span></span>
+        <h3>Lípidos</h3>
+        <p class="desc">Ácidos grasos, triglicéridos, fosfolípidos y esteroides: colesterol y membranas biológicas.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+      <li><a href="https://juanvelasco-svg.github.io/QOMedClase14/" target="_blank" rel="noopener">
+        <span class="top"><span class="num">14</span><span class="label">Clase 14</span></span>
+        <h3>Aminoácidos, proteínas y integración</h3>
+        <p class="desc">Enlace peptídico, estructura de proteínas y repaso integrado de biomoléculas con enfoque médico.</p>
+        <span class="btn">Ingresar a la clase →</span>
+      </a></li>
+
+    </ol>
+  </main>
+
+  <footer>
+    <p class="motto">“Spiritus ubi vult spirat”</p>
+    <p>© 2026 Universidad Peruana Cayetano Heredia · Curso de Química Orgánica — Medicina</p>
+  </footer>
+
+</body>
+</html>
