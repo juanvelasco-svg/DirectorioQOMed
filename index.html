@@ -12,10 +12,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --upch-gold:#d9a520;
-    --upch-gold-dark:#a97a10;
-    --upch-gold-soft:#f3d27a;
-    --upch-blue:#0e2f56;
+    ---gold:#d9a520;
+    --QOMed-gold-dark:#a97a10;
+    --QOMed-gold-soft:#f3d27a;
+    --QOMed-blue:#0e2f56;
     --ink:#12263f;
     --paper:#fffcf4;
   }
@@ -39,7 +39,7 @@
     text-align:center;
     background:rgba(255,252,244,.95);
     border-radius:18px;
-    border-top:6px solid var(--upch-gold);
+    border-top:6px solid var(---gold);
     box-shadow:0 20px 50px rgba(0,0,0,.35);
     backdrop-filter:blur(6px);
     animation:fadeUp .7s ease both;
@@ -51,7 +51,7 @@
   }
   .hero .uni{
     font-weight:700; letter-spacing:.14em; text-transform:uppercase;
-    color:var(--upch-blue); font-size:.95rem;
+    color:var(---blue); font-size:.95rem;
   }
   .hero .unidad{
     color:#5a6b85; font-size:.8rem; letter-spacing:.1em;
@@ -60,16 +60,16 @@
   .hero h1{
     font-family:'Lora',serif; font-weight:700;
     font-size:clamp(2.1rem, 5vw, 3.1rem);
-    color:var(--upch-blue); margin:14px 0 6px;
+    color:var(---blue); margin:14px 0 6px;
   }
   .hero .dir{
-    color:var(--upch-gold-dark); font-weight:700; font-size:1rem; letter-spacing:.04em;
+    color:var(---gold-dark); font-weight:700; font-size:1rem; letter-spacing:.04em;
   }
   .hero .line{
     width:120px; height:3px; margin:18px auto 0;
-    background:linear-gradient(90deg, transparent, var(--upch-gold), transparent);
+    background:linear-gradient(90deg, transparent, var(---gold), transparent);
   }
-  .hero .caduceo{ color:var(--upch-gold-dark); font-size:1.2rem; margin-top:10px; }
+  .hero .caduceo{ color:var(---gold-dark); font-size:1.2rem; margin-top:10px; }
 
   /* ============ DIRECTORIO DE CLASES ============ */
   .grid{
@@ -95,19 +95,19 @@
   }
   .grid a::before{
     content:""; position:absolute; top:0; left:0; right:0; height:5px;
-    background:linear-gradient(90deg, var(--upch-gold), var(--upch-gold-soft), var(--upch-gold-dark));
+    background:linear-gradient(90deg, var(---gold), var(---gold-soft), var(---gold-dark));
   }
   .grid a:hover{
     transform:translateY(-6px);
     box-shadow:0 22px 44px rgba(5,20,45,.42);
-    border-color:var(--upch-gold);
+    border-color:var(---gold);
   }
   .top{display:flex; align-items:center; gap:12px}
   .num{
     font-family:'Lora',serif; font-weight:700; font-size:1.25rem; color:#fff;
     width:52px; height:52px; border-radius:50%;
     display:grid; place-items:center; flex-shrink:0;
-    background:linear-gradient(135deg, var(--upch-gold), var(--upch-gold-dark));
+    background:linear-gradient(135deg, var(---gold), var(---gold-dark));
     box-shadow:inset 0 -3px 6px rgba(0,0,0,.18);
   }
   .label{
@@ -116,17 +116,17 @@
   }
   .grid h3{
     font-family:'Lora',serif; font-size:1.13rem; line-height:1.3;
-    color:var(--upch-blue);
+    color:var(---blue);
   }
   .desc{font-size:.92rem; color:#44566f; line-height:1.5; flex:1}
   .btn{
     align-self:flex-start; margin-top:6px;
-    background:var(--upch-blue); color:#ffe9ad;
+    background:var(---blue); color:#ffe9ad;
     padding:9px 18px; border-radius:999px;
     font-weight:700; font-size:.84rem; letter-spacing:.03em;
     transition:background .25s ease, color .25s ease;
   }
-  .grid a:hover .btn{background:var(--upch-gold-dark); color:#fff}
+  .grid a:hover .btn{background:var(---gold-dark); color:#fff}
 
   /* ============ PIE ============ */
   footer{
